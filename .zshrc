@@ -102,4 +102,10 @@ alias vi="nvim"
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
+alias log='git log --oneline'
+alias gcp='git cherry-pick'
+alias amend='git commit --amend'
+alias commit='git commit --signoff'
+alias push='git push'
+alias pushf='git push --force'
 
