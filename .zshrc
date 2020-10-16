@@ -108,4 +108,8 @@ alias amend='git commit --amend'
 alias commit='git commit --signoff'
 alias push='git push'
 alias pushf='git push --force'
+alias runC='/home/zlatan/runC'
+alias matlab='/opt/MATLAB/R2018a/bin/matlab'
+alias androidS='/opt/android-studio/bin/studio.sh'
+alias buildK='cd ~/kranel/scripts && ./kernel.sh'
 
