@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/zlatan/_fet_base'
+let g:netrw_dirhist_3='/home/zlatan/_fet_base/.conf_cpp1'
+let g:netrw_dirhist_2='/home/zlatan/karamel/android_kernel_oneplus_sm8150'
 let g:netrw_dirhist_1='/home/zlatan/karamel/weeb_sm8150/kernel'

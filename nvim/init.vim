@@ -45,23 +45,13 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 set inccommand=nosplit
 
-" deal with colors
-let g:airline_theme='one'
-if !has('gui_running')
-  set t_Co=256
+set termguicolors
+" set background=dark
+colorscheme onedark
+if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
-if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
-  set termguicolors
-endif
-" Colors
-set background=dark
-try 
-  colorscheme one 
-  " colorscheme dracula 
-  "source ~/.vimrc_background
-catch
-  colorscheme default
-endtry
 
 " Base16
 let base16colorspace=256
