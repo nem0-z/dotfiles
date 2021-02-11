@@ -111,5 +111,13 @@ alias pushf='git push --force'
 alias runC='/home/zlatan/runC'
 alias matlab='/opt/MATLAB/R2018a/bin/matlab'
 alias androidS='/opt/android-studio/bin/studio.sh'
-alias buildK='cd ~/kranel/scripts && ./kernel.sh'
+alias buildK='~/kranel/scripts/kernel.sh'
+alias build_release='~/kranel/scripts/kernel_stable.sh'
+alias lab_os='cd ~/fet_os/jos && runC'
+alias o='xdg-open'
 
+autoload -Uz compinit
+compinit
+kitty + complete setup zsh | source /dev/stdin
+
+fortune | cowsay
