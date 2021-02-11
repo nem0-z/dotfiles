@@ -1,36 +1,54 @@
+#!/bin/bash
+sudo su
+cd || exit
+
+read -p "Bitch do you want me to style your setup? ;)" STYLE
+
 #Basic tools
-sudo apt update
-sudo apt install build-essential
-sudo apt install clang
-sudo apt install git
-sudo apt install kitty
+apt update -y
+apt install -y build-essential clang git kitty zsh nodejs
 
 #Brave browser
-sudo apt install apt-transport-https curl gnupg
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update && sudo apt install brave-browser
-
-#Dein for vim
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.cache/dein
+apt install -y apt-transport-https curl gnupg
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc |  apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" |  tee /etc/apt/sources.list.d/brave-browser-release.list
+apt update -y &&  apt install -y brave-browser
 
 #Python
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update && sudo apt install python3.8
-sudo apt install python3-pip
+apt install -y software-properties-common
+add-apt-repository ppa:deadsnakes/ppa
+apt update -y &&  apt install -y python3.8
+apt install -y python3-pip
 
 #ccls
-sudo snap install ccls --classic
-
-#Oh my bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+snap install ccls --classic
 
 #Spotify
-sudo snap install spotify
+snap install spotify
 
 #VSCode
-sudo snap install code --classic
+snap install code --classic
 
+#NVIM
+snap install nvim --classic
+
+#Kitty setup
+cp -r ~/dotfiles/kitty ~/.configs
+
+case $STYLE in 
+  "y" | "Y" | "yes" | "YES")
+
+    echo "Styling everything awww yes"
+    #Oh my zsh
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    #Dein for nvim
+    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh && sh ./installer.sh ~/.cache/dein
+    
+    #nvim configs
+    cp -r ~/dotfiles/nvim ~/.configs
+    ;;
+esac
+
+echo "Done!"
 
