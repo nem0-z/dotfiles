@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -102,22 +99,22 @@ alias vi="nvim"
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
-alias log='git log --oneline'
-alias gcp='git cherry-pick'
 alias amend='git commit --amend'
-alias commit='git commit --signoff'
+alias gl='git log --oneline'
+alias gcp='git cherry-pick'
+alias gcm='git commit'
+alias gcs='git commit --signoff'
+alias gca='git add --all'
 alias push='git push'
 alias pushf='git push --force'
-alias runC='/home/zlatan/runC'
-alias matlab='/opt/MATLAB/R2018a/bin/matlab'
-alias androidS='/opt/android-studio/bin/studio.sh'
-alias buildK='~/kranel/scripts/kernel.sh'
-alias build_release='~/kranel/scripts/kernel_stable.sh'
-alias lab_os='cd ~/fet_os/jos && runC'
 alias o='xdg-open'
 
-autoload -Uz compinit
-compinit
-kitty + complete setup zsh | source /dev/stdin
+alias gb='go build'
+alias gr='go run'
+alias gra='go run *.go'
+alias grm='go run main.go'
+alias gmi='go mod init'
+export GOPATH="/home/zlatan/projects/go"
 
-fortune | cowsay
+export ARI_USERNAME="asterisk"
+export ARI_PASSWORD="testing123"

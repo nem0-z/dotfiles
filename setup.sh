@@ -1,11 +1,10 @@
 #!/bin/bash
-sudo su
 cd || exit
 
 read -p "Bitch do you want me to style your setup? ;)" STYLE
 
 #Basic tools
-apt update -y
+sudo apt update -y
 apt install -y build-essential clang git kitty zsh nodejs
 
 #Brave browser
@@ -32,8 +31,6 @@ snap install code --classic
 #NVIM
 snap install nvim --classic
 
-#Kitty setup
-cp -r ~/dotfiles/kitty ~/.configs
 
 case $STYLE in 
   "y" | "Y" | "yes" | "YES")
@@ -47,6 +44,9 @@ case $STYLE in
     
     #nvim configs
     cp -r ~/dotfiles/nvim ~/.configs
+
+    #Guake
+    guake --restore-preferences ~/dotfiles/guake.conf
     ;;
 esac
 
